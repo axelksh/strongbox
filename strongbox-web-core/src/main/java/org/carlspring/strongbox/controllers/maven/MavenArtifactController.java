@@ -249,8 +249,6 @@ public class MavenArtifactController
                                @ApiParam(value = "The destination repositoryId", required = true)
                                @RequestParam(name = "destRepositoryId") String destRepositoryId,
                                @PathVariable String path)
-
-            throws IOException, JAXBException
     {
         logger.debug("Copying " + path +
                      " from " + srcStorageId + ":" + srcRepositoryId +
@@ -322,7 +320,7 @@ public class MavenArtifactController
                                                name = "force",
                                                required = false) boolean force,
                                  @PathVariable String path)
-            throws IOException, JAXBException
+            throws IOException
     {
         logger.info("Deleting " + storageId + ":" + repositoryId + "/" + path + "...");
 
